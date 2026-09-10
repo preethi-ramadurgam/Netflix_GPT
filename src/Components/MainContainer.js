@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import VideoTitle from './VideoTitle';
 import { VideoBackground } from './VideoBackground';
 const MainContainer = () => {
-  const movies = useSelector((state) => state.movies?.nowPlayingMovies);
+  const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if(!movies)
     return; // This is also known as early return. If the movies are null, we don't want to render anything. This is a good practice to avoid rendering components that depend on data that is not yet available.
   const mainMovie=movies[2];
-  console.log("mainMovie",mainMovie);
+  // console.log("mainMovie",mainMovie);
   const {original_title,overview,id}= mainMovie;
   return (
     <div>
