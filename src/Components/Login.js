@@ -7,7 +7,7 @@ import { auth } from '../Utility/Firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../Utility/UserSlice';
 import { USER_AVATAR } from '../Utility/Constants';
-
+import { BG_URL } from '../Utility/Constants';
 const Login = () => {
     // const navigate = useNavigate();
     const [isSignInForm,setIsSignInForm]=useState(true);
@@ -80,10 +80,7 @@ const Login = () => {
     <div className='h-screen overflow-y-hidden'>
         <Header/>
         <div className='absolute'>
-            <img
-                src="https://assets.nflxext.com/ffe/siteui/vlv3/ae999ff9-5858-4638-b0f2-8abcf9fb6a08/web/IN-en-20260831-TRIFECTA-perspective_8fd44dcf-63ea-4547-8e1e-e5fc7e03883d_large.jpg"
-                alt="Netflix"
-            />
+            <img src={BG_URL} alt="Netflix"/>
         </div>
         <form onSubmit={(e)=>{e.preventDefault()}} className='w-3/12 absolute p-12 bg-black my-10 mx-auto right-0 left-0 text-white bg-opacity-80'>
             <h1 className='font-bold text-3xl py-4'>{isSignInForm?"Sign In":"Sign Up"}</h1>
